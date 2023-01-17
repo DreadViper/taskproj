@@ -96,6 +96,19 @@
 }
 
 /* slider */
+/* herobanner */
+.slider-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.slider-text{
+    font-family: Cookie;
+    font-size: 65px;
+    line-height: initial;
+    color: #fff;
+}
+/* herobanner ends */
 
 .swiper { 
     height: 500px;
