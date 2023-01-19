@@ -739,4 +739,7 @@
     .exes{
         padding: 5%;
     }
+    .btn-show-all a{
+        width: 55%;
+    }
 }
