@@ -724,6 +724,9 @@
     .exes{
         padding: 11%;
     }
+    .btn-show-all a{
+        width: 33%;
+    }
 }
 
 @media screen and (max-width: 575px) {
