@@ -612,6 +612,12 @@
     border:none;
     box-shadow: none;
 }
+.accordion-collapse{
+    transition: .8s;
+}
+.accordion-button::after{
+    transition: .5s;
+}
 .accordion-button:not(.collapsed){
     color: #fff;
     background: transparent;
@@ -727,6 +733,15 @@
     .btn-show-all a{
         width: 33%;
     }
+    .footer-listing{
+        border: none;
+    }
+    .footer-listing ul{
+        padding: 0;
+    }
+    .social ul {
+        padding-left: 20px;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -744,5 +759,17 @@
     }
     .btn-show-all a{
         width: 55%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .slider-shop-btn{
+        width: 75%;
+    }
+    .product-title:after, .product-title::before {
+        width: 15%!important;
+    }
+    .btn-show-all a{
+        width: 65%;
     }
 }
