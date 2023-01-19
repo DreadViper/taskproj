@@ -93,6 +93,8 @@
 .bottom-inr ul a {
     text-decoration: none;
     color: #fff;
+    z-index: 2;
+    position: relative;
 }
 
 .bottom-inr ul li {
@@ -100,6 +102,23 @@
     border-left: 1px solid white;
     font-size: 14px;
     font-weight: 700;
+    position: relative;
+}
+.bottom-head ul li::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    background: #000000db;
+    transform: scale(0);
+}
+.bottom-head ul li:hover::after{
+    opacity: .4;
+    transform: scale(1);
 }
 
 .li-active {
@@ -227,8 +246,6 @@
 /* Hamburger css */
 /* slider */
 /* herobanner */
-.hero-banner {
-}
 
 .slider-content {
     display: flex;
@@ -268,8 +285,30 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s;
 }
-
+.slider-shop-btn:hover{
+    background-color: #000000db;
+}
+.slider-shop-btn::after{
+    position: absolute;
+    content: '';
+    top: 0%;
+    left: -80%;
+    opacity: 1;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    transition: all 0.6s;
+    transform: rotate(45deg);
+    
+}
+.slider-shop-btn:hover::after{
+    left: 80%;
+    opacity: 0;
+}
 /* herobanner ends */
 .swiper {
     height: 500px;
@@ -366,23 +405,101 @@
 .card-swipe {
     background: #f2f2f2;
     width: 100%;
+    transition: .8s;    
 }
 
 .btn-show-all {
     text-align: center;
-    padding: 8%;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.btn-show-all span {
+.btn-show-all a{
     padding: 1.5% 4%;
     border: 1px solid #979090;
     font-family: Opensans-bold;
     color: #979090;
+    text-decoration: none;
+    transition: all 0.6s;
+    position: relative;
+    overflow: hidden;
+    width: 25%;
+    display: block;
+}
+.btn-show-all a:hover{
+    background-color: #000000db;
+    
+}
+.btn-show-all a::after{
+    position: absolute;
+    content: '';
+    top: 0%;
+    left: -90%;
+    opacity: 1;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    transition: all 0.6s;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+.btn-show-all a:hover::after{
+    left: 90%;
+    opacity: 0;
 }
 
+.card-img{
+    overflow: hidden;
+    transition: .8s;
+    transform: scale(1);
+    position: relative;
+}
+.card-img::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+    transition: all 0.7s;
+    background-color: #fff;
+    left: 80%;
+    top: -80%;
+    z-index: 2;
+    opacity: .8;
+}
+.card-img::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+    transition: all 0.7s;
+    background-color: #fff;
+    top:80%;
+    left: -80%;
+    z-index: 3;
+    opacity: .8;
+}
 .card-img img {
     width: 100%;
+    transition: .8s;
 }
+.card-swipe:hover .card-img img{
+    transition: .8s;
+    transform: scale(1.5);
+}
+.card-swipe:hover .card-img::before{
+    opacity: 0;
+    top:80%;
+    left: -80%;
+}
+.card-swipe:hover .card-img::after{
+    opacity: 0;
+    left: 80%;
+    top: -80%;
+}
+
 
 .card-text {
     padding: 10px;
@@ -528,6 +645,9 @@
     .card-smal{
         font-size: 10px;
     }
+    .nav-btn{
+        display: none;
+    }
     .header {
         display: none;
     }
@@ -603,5 +723,20 @@
     }
     .exes{
         padding: 11%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .slider-text{
+        font-size: 45px;
+    }
+    .slider-shop-btn{
+        width: 60%;
+    }
+    .product-title:after, .product-title::before {
+        width: 22%!important;
+    }
+    .exes{
+        padding: 5%;
     }
 }
